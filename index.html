@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<title>shopping list</title>
+	<script src="angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+<body >
+<div ng-controller='ToBuyController as tbc'>
+	<h2>To Buy List</h2>
+	<div ng-if="tbc.item==false">Everything is Bought</div>
+	<div ng-repeat= "x in tbc.item">
+
+		Buy {{x.item_quantity}} {{x.item_name}} <button ng-click="tbc.additem(x.item_quantity, x.item_name, $index)"> Bought</button><br>
+		<br>
+	</div>
+</div>
+<h2>Already Bought List</h2>
+
+	
+<div ng-controller='AlreadyBoughtController as abc'>
+	<div ng-if="abc.item1==false"> Nothing Bought Yet</div>
+	<div ng-repeat="y in abc.item1">
+		Bought {{y.item_quantity}} {{y.item_name}}
+	</div>
+</div>
+</body>
+</html>
